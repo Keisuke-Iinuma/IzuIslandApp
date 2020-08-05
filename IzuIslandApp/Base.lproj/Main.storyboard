@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,103 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IzuIslandApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L3F-ae-9fX">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8KB-fF-GjP">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="yEF-g7-D3h"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="メニュー" id="isu-Jw-CtX">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="line.horizontal.3" catalog="system" id="rjD-Ma-Qdn">
+                                            <connections>
+                                                <segue destination="WJq-DI-wpK" kind="show" id="aGa-H8-aVf"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8KB-fF-GjP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Abr-Tk-2Ng"/>
+                            <constraint firstItem="L3F-ae-9fX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Kp0-wL-U5y"/>
+                            <constraint firstItem="L3F-ae-9fX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WBk-73-Vau"/>
+                            <constraint firstItem="8KB-fF-GjP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WRm-YA-uDf"/>
+                            <constraint firstItem="8KB-fF-GjP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aUg-bo-Io0"/>
+                            <constraint firstItem="L3F-ae-9fX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ahI-8K-gAV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="L3F-ae-9fX" secondAttribute="bottom" id="hpM-QX-4M6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="L3F-ae-9fX" secondAttribute="trailing" id="lcE-26-WTS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="MapView" destination="L3F-ae-9fX" id="e9E-3H-PVI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="133" y="121"/>
+        </scene>
+        <!--Menu-->
+        <scene sceneID="1eS-0I-UsR">
+            <objects>
+                <viewController id="WJq-DI-wpK" customClass="Menu" customModule="IzuIslandApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tJ3-3A-RkC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZa-V3-3ZX">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <items>
+                                    <navigationItem title="メニュー" id="bsw-pS-caD">
+                                        <barButtonItem key="leftBarButtonItem" title="地図" image="chevron.left" catalog="system" id="b2N-9c-Nhj"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Ff-zC-Jbt">
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="TDa-vE-JuX">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TDa-vE-JuX" id="dPK-gB-Zvz">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mLJ-Lz-XZm" firstAttribute="trailing" secondItem="0Ff-zC-Jbt" secondAttribute="trailing" id="NEP-fV-ykL"/>
+                            <constraint firstAttribute="trailing" secondItem="JZa-V3-3ZX" secondAttribute="trailing" id="W5l-Hb-RON"/>
+                            <constraint firstItem="mLJ-Lz-XZm" firstAttribute="bottom" secondItem="0Ff-zC-Jbt" secondAttribute="bottom" id="W7e-0z-ZXx"/>
+                            <constraint firstItem="0Ff-zC-Jbt" firstAttribute="leading" secondItem="mLJ-Lz-XZm" secondAttribute="leading" id="XQm-xs-7Ap"/>
+                            <constraint firstItem="JZa-V3-3ZX" firstAttribute="leading" secondItem="mLJ-Lz-XZm" secondAttribute="leading" id="Xco-pI-O6L"/>
+                            <constraint firstItem="JZa-V3-3ZX" firstAttribute="top" secondItem="mLJ-Lz-XZm" secondAttribute="top" id="Y7E-Zt-4Sh"/>
+                            <constraint firstItem="0Ff-zC-Jbt" firstAttribute="top" secondItem="JZa-V3-3ZX" secondAttribute="bottom" id="jME-kD-yhl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mLJ-Lz-XZm"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ees-pW-vOk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U4F-VU-gbu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924.63768115942037" y="122.54464285714285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chevron.left" catalog="system" width="48" height="64"/>
+        <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
+    </resources>
 </document>
